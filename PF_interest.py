@@ -5,4 +5,3 @@ total_amount= principal_amount * (1 + annual_interest_rate / 100) ** number_of_y
 total_interest= total_amount - principal_amount
 print("total amount is: ",total_amount)
 print("compound interest is: ",total_interest)
-
