@@ -20,7 +20,7 @@ sold_qty = []
 sold_price = []
 sold_total = []
 total=0
-choice=int(input("Enter 1 for bill counter or enter 0 to exit: "))
+choice=int(input("Enter 0 to exit other wise press any number to go counter: "))
 while choice != 0:
     medi_code=input("Enter medicine code: ")
     qty=int(input("Enter medicine quantity: "))
@@ -33,7 +33,7 @@ while choice != 0:
             sold_qty.append(qty)
             sold_price.append(price[i])
             sold_total.append(price[i] * qty)
-    choice=int(input("Enter 1 for next medicine or enter 0 to exit: "))
+    choice=int(input("Enter 0 to exit other wise press any number to go counter: "))
 print("-" * 95)    
 print(f"{'Code':<20} {'Name':<20} {'Quantity':<20} {'Price':<20} {'Total':<20}")
 print("-" * 95)
