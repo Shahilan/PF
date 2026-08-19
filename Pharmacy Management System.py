@@ -21,25 +21,30 @@ sold_price = []
 sold_total = []
 total=0
 choice=int(input("Enter 0 to exit other wise press any number to go counter: "))
-while choice != 0:
-    medi_code=input("Enter medicine code: ")
+while True:
+    if choice == 0:
+        break
+    medi_code=input("Enter medicine code: ").strip().upper()
     qty=int(input("Enter medicine quantity: "))
+
+    found = False
 
     for i in range(len(code)):
         if code[i] == medi_code:
+            found = True
             total += price[i]*qty
             sold_code.append(code[i])
             sold_name.append(name[i])
             sold_qty.append(qty)
             sold_price.append(price[i])
             sold_total.append(price[i] * qty)
-    choice=int(input("Enter 0 to exit other wise press any number to go counter: "))
-print("-" * 95)    
+    if not found:
+        print("Medicine code not found!")       
+    choice=int(input("Enter 0 to exit other wise press any number to go next item: "))
+print("=" * 45,"Bill","=" * 45)    
 print(f"{'Code':<20} {'Name':<20} {'Quantity':<20} {'Price':<20} {'Total':<20}")
-print("-" * 95)
+print("-" * 96)
 for i in range(len(sold_code)):
     print(f"{sold_code[i]:<20} {sold_name[i]:<20} {sold_qty[i]:<20} {sold_price[i]:<20} {sold_total[i]:<20}")
-print("-" * 95)    
+print("-" * 96)    
 print("Total amount is: ",total)
-
-
